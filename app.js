@@ -8,10 +8,12 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
-//var port = process.env.PORT || 3000;
-app.listen( app.get( 'port' ), function() {
-  console.log(app.get( 'port' ));
+var port = process.env.PORT || 3000;
+
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
 });
+
 
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
@@ -19,8 +21,8 @@ var mongoose = require('mongoose');
 var flash = require('connect-flash');
 var session = require('express-session');
 
- var configDB = require('./config/database.js');
- mongoose.connect(configDB.url);
+ //var configDB = require('./config/database.js');
+ //mongoose.connect(configDB.url);
 
 var app = express();
 
