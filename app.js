@@ -8,8 +8,10 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
-var port = process.env.PORT || 3000;
-
+//var port = process.env.PORT || 3000;
+app.listen( app.get( 'port' ), function() {
+  console.log(app.get( 'port' ));
+});
 
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
